@@ -1,0 +1,21 @@
+Spiegazione Livelli
+
+1 The Legend Of Hidden code. 
+Controllare nel codice del png aprendolo con blocco note dove sarà presente la flag. Bisogna copiare e incollare la flag sul sito.
+
+2 Gruppi Hacker
+Ci sarà presente un solo nome di gruppi hacker che si ripete una sola volta (Omega_group)
+
+3 There is no spoon 
+Controllare nel codice html facendo ctrl+u/ispeziona per visualizzare il codice HTML. Cercare il testo commentato a fine codice e cercare tutti i numeri e i caratteri speciali della flag.
+
+4 CSV TRAP
+Il file contiene delle formule in stile Excel come =CHAR(numero), che restituiscono il carattere ASCII corrispondente al numero specificato. Va aperto come blocco note e si noterà uno stile diverso con char(102) tipo. Se convertito in Ascii restituisce una lettera o un numero.
+
+5 Key to boss
+In questo livello bisognerà leggere il testo nel file Dialogo_con_il_guardiano_del_CEO.pdf e confrontare con Password_nascoste.pdf per capire quale potrebbe essere la password del ceo
+
+6 Mystery code 
+Va convertito in il codice ROT13 su cyberchef.io che tramite cifrario di Cesare si riesci a trovare la combinazione di lettere e numeri che compone la flag
+
+

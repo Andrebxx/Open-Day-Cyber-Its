@@ -1,0 +1,25 @@
+# File sensibili
+password.php
+config.php
+*.env
+
+# File temporanei
+*.tmp
+*.log
+*.cache
+
+# Cartelle di sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Backup files
+*.bak
+*~
+becup/

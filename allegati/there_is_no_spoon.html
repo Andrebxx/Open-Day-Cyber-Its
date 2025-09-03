@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>There Is No Spoon</title>
+    <style>
+        body {
+            background-color: black;
+            color: #00ff00;
+            font-family: "Courier New", monospace;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* Effetto pioggia Matrix */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: block;
+            z-index: -1;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border: 2px solid #00ff00;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="matrixCanvas"></canvas>
+
+    <div class="container">
+        <h1>Welcome to the Matrix</h1>
+        <p>The truth is out there. Can you find it?</p>
+    </div>
+
+    <script>
+        const canvas = document.getElementById("matrixCanvas");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const fontSize = 18;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(0);
+
+        function drawMatrix() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "#00ff00";
+            ctx.font = fontSize + "px Courier";
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = characters[Math.floor(Math.random() * characters.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(drawMatrix, 50);
+
+        window.addEventListener("resize", () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            drops.length = Math.floor(canvas.width / fontSize);
+            drops.fill(0);
+        });
+    </script>
+
+    <!--
+    Neo, the answer you seek is hidden within the code.
+    The Matrix has many secrets, but only the true chosen one will find it.
+    
+    filo di codice scorre nel buio,
+    luci verdi danzano in un flusso continuo.
+    aspetti risposte, cerchi un motivo,
+    guarda più a fondo, segui l'istinto.
+
+    {Il mondo si piega, il codice è chiave,
+    frammenti di sogni in realtà virtuale.
+    0mbre si fondono, nulla è reale,
+    l'illusione si spezza, sei pronto a osare.
+    l'oltre confine è un battito eterno,
+    0ltre lo schermo c'è un fuoco moderno.
+    wake up, Neo, il viaggio è iniziato.
+
+    _Sospeso tra bytes e infinite scelte,
+    7empo distorto, verità nascoste.
+    hacker di sogni, segui il segnale,
+    3ntrando nel buco, scegli il reale.
+
+    _Riflessi di codice, pioggia di bit,
+    whispers di dati in un eco infinito.
+    hai visto il confine, l'hai quasi toccato,
+    1ncisa nel buio, la via del creato.
+    7i perdi, ti trovi, ti lasci guidare,
+    3scavando dal fondo, pronto a saltare.
+
+    _Resta nel buco o prova a saltare,
+    rischia il pensiero, riscrivi il finale.
+    assaggia la scelta, rosso o blu?
+    blocchi di codice, che cosa sei tu?
+    bits e realtà, fusione perfetta,
+    1mmagini sparse, la mente si aspetta.
+    tutto è un sogno, oppure è destino?
+
+    }Ora decidi: pillola o cammino?
+    -->
+</body>
+</html>
