@@ -175,4 +175,4 @@ Questo progetto è rilasciato sotto licenza MIT. Vedi il file `LICENSE` per i de
 
 ---
 
-*Realizzato con ❤️ per promuovere l'educazione in cybersecurity*
+*Realizzato con ❤️ per promuovere l'educazione in cybersecurity!*
