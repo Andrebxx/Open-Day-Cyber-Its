@@ -38,21 +38,22 @@ Un sistema di gioco interattivo per eventi Open Day dedicato alla cybersecurity,
 ## 📁 Struttura del Progetto
 
 ```
-├── index.php          # Pagina di registrazione squadre
-├── attesa.php          # Sala d'attesa con regole del gioco
-├── livelli.php         # Lista dei livelli disponibili
-├── livello.php         # Interfaccia per rispondere alle domande
-├── risultati.php       # Visualizzazione risultati finali
-├── admin.php           # Pannello di amministrazione
-├── header.php          # Header comune delle pagine
-├── stile.css           # Fogli di stile personalizzati
-├── password.php        # Configurazione database (escluso da Git)
-├── allegati/           # File e risorse per le sfide
-│   ├── *.pdf          # Documenti delle sfide
-│   ├── *.png          # Immagini e screenshot
-│   ├── *.html         # File web per le sfide
-│   └── *.csv          # Dati per le sfide
-└── immagini/           # Loghi e risorse grafiche
+├── index.php              # Pagina di registrazione squadre
+├── attesa.php              # Sala d'attesa con regole del gioco
+├── livelli.php             # Lista dei livelli disponibili
+├── livello.php             # Interfaccia per rispondere alle domande
+├── risultati.php           # Visualizzazione risultati finali
+├── admin.php               # Pannello di amministrazione
+├── header.php              # Header comune delle pagine
+├── stile.css               # Fogli di stile personalizzati
+├── password.php            # Configurazione database (escluso da Git)
+├── my_olivettiopenday.sql  # Struttura database e dati di esempio
+├── allegati/               # File e risorse per le sfide
+│   ├── *.pdf              # Documenti delle sfide
+│   ├── *.png              # Immagini e screenshot
+│   ├── *.html             # File web per le sfide
+│   └── *.csv              # Dati per le sfide
+└── immagini/               # Loghi e risorse grafiche
 ```
 
 ## 🔧 Installazione e Configurazione
@@ -63,12 +64,16 @@ Un sistema di gioco interattivo per eventi Open Day dedicato alla cybersecurity,
 - Estensioni PHP: mysqli, session, file_uploads
 
 ### Setup Database
-1. Crea un database MySQL
-2. Configura le tabelle per:
-   - Squadre registrate
-   - Livelli e domande
-   - Risposte e punteggi
-   - Configurazione di gioco
+1. Crea un database MySQL chiamato `my_olivettiopenday` (o il nome che preferisci)
+2. Importa la struttura e i dati di esempio del database:
+   ```bash
+   mysql -u your_username -p your_database_name < my_olivettiopenday.sql
+   ```
+3. Il database include:
+   - **Configurazione**: Impostazioni di configurazione del gioco
+   - **Squadra**: Squadre registrate con password e punteggi
+   - **Livelli**: Livelli delle sfide con descrizioni e flag
+   - **LivelliCompletati**: Tracciamento dei livelli completati
 
 ### Configurazione
 1. Clona il repository:
@@ -126,6 +131,16 @@ Un sistema di gioco interattivo per eventi Open Day dedicato alla cybersecurity,
 
 ## 📊 Tipi di Sfide Supportate
 
+Il database include 6 livelli di sfida pre-configurati:
+
+1. **The Legend of the Hidden Code** (100 punti) - Sfida di steganografia
+2. **Gruppi Hacker** (150 punti) - Analisi dati e riconoscimento pattern
+3. **There Is No Spoon** (250 punti) - Analisi codice sorgente web
+4. **CSV Trap** (350 punti) - Sfida formato file e codifica
+5. **Key to the Boss** (450 punti) - Social engineering e analisi password
+6. **Mystery Code** (700 punti) - Crittografia e decifraggio codici
+
+### Categorie Generali delle Sfide:
 - **OSINT**: Ricerca informazioni open source
 - **Crittografia**: Decifraggio e analisi crittografica
 - **Web Security**: Vulnerabilità web e analisi codice
